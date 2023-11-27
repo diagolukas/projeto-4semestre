@@ -1,0 +1,87 @@
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Define uma camada acima do conteúdo principal */
+}
+
+.cabecalho {
+  background-color: #581bad !important;
+}
+
+.footer {
+  background-color: #591bad !important;
+}
+
+.navbar {
+  background-color: #581bad;
+  position: relative;
+  z-index: 2;
+  /* Define a ordem de sobreposição da navbar */
+}
+
+#background-image {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+
+  /* Define a ordem de sobreposição da imagem */
+}
+
+#services-container {
+  margin-top: 100px;
+  /* Ajuste a margem superior conforme necessário para separar da imagem */
+}
+
+#foto_1 {
+  height: 460px;
+  width: auto;
+}
+#foto_2 {
+  height: 460px;
+  width: auto;
+}
+#foto_3 {
+  height: 460px;
+  width: auto;
+}
+
+#foto_4 {
+  height: 460px;
+  width: auto;
+}
+#foto_5 {
+  height: 460px;
+  width: auto;
+}
+#foto_6 {
+  height: 460px;
+  width: auto;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  /* Define a ordem de sobreposição da navbar */
+}
+
+.mskUp{
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+#background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  /* Define a ordem de sobreposição da imagem */
+}

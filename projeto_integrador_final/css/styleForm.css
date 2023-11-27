@@ -1,0 +1,153 @@
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Define uma camada acima do conteúdo principal */
+}
+
+.cabecalho {
+  background-color: #581bad !important;
+}
+
+.footer {
+  background-color: #591BAD !important;
+}
+
+#rodape {
+  margin-top: 40px;
+  height: 100%;
+  width: 100% !important;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  /* Define a ordem de sobreposição da navbar */
+}
+
+.mskUp{
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+#background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  /* Define a ordem de sobreposição da imagem */
+}
+.servicos {
+  background-color: #f1f0f3 !important;
+  border-radius: 15px;
+
+  color: #020202;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: right;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: large;
+  text-align: right;
+}
+
+#card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#texto {
+  padding-bottom: 30px;
+  box-shadow: 1px 1px 1px 1px black
+}
+
+#botao {
+  margin-top: 50px;
+}
+
+#imagem2 {
+  border-radius: 0px 30px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #591BAD;
+
+}
+
+#paragrafo {
+  margin-top: 25px;
+  font-size: 17px;
+}
+
+#titulo {
+  margin-top: 25px;
+  margin-bottom: 85px;
+  color: #591BAD;
+}
+
+#botao {
+  background-color: #591BAD;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+#cases {
+  padding-top: 50px;
+}
+
+#paragrafoCases {
+  font-size: 17px;
+  padding-bottom: 30px;
+  box-shadow: 0px 2px 2px black;
+  text-align: center;
+  margin-top: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #591BAD;
+}
+
+#rodape {
+  margin-top: 40px;
+  height: 100%;
+  width: 100% !important;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  /* Define a ordem de sobreposição da navbar */
+}
+
+#background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  /* Define a ordem de sobreposição da imagem */
+}
+
+#-container {
+  margin-top: 100px;
+  /* Ajuste a margem superior conforme necessário para separar da imagem */
+}
+
+#texto_servico {
+  color: #591BAD;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.full-width-input {
+  width: 100%;
+}

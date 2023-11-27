@@ -1,0 +1,49 @@
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Define uma camada acima do conteúdo principal */
+}
+
+.cabecalho {
+  background-color: #581bad !important;
+}
+
+.footer {
+  background-color: #591BAD !important;
+}
+
+#rodape {
+  margin-top: 40px;
+  height: 100%;
+  width: 100% !important;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  /* Define a ordem de sobreposição da navbar */
+}
+
+.mskUp{
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+#background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  /* Define a ordem de sobreposição da imagem */
+}
+
+#services-container {
+  margin-top: 100px;
+  /* Ajuste a margem superior conforme necessário para separar da imagem */
+}
