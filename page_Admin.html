@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.3.0/css/fileinput.min.css" integrity="sha512-DkMksXWpfV6nZuH14L+WKE8lBUxeNfNqaXWj5R17XMY3v7vCbeWqNl2lH3xJBvWgaL/lQQ5cYzB5cL+1wYrTVg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Ajusta a altura considerando uma navbar de 60px */
+            margin-top: 250px; /* Adiciona espaço acima para a navbar */
+        }
+
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 200px;
+            padding-top: 10px;
+            margin-top: 50px;
+        }
+
+        .navbar {
+            background-color: #6f42c1;
+            color: white;
+        }
+
+        label {
+            color: #6c757d;
+        }
+
+        .aligned-fields {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+        }
+
+        .submit-btn,
+        .clear-btn {
+            background-color: #6f42c1;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .clear-btn {
+            background-color: #dc3545;
+            margin-left: 10px;
+        }
+
+        /* Adiciona estilo para tornar a modal fixa no topo */
+        .modal-fixed-top {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: 0;
+            z-index: 1050;
+        }
+
+        /* Centraliza a modal verticalmente */
+        .modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - (20px * 2));
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand fixed-top" id="navbar">
+        <a class="navbar-brand" href="#">Sua Marca</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="listagem.html">Listagem</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center text-purple">Cadastro de Colaboradores</h2>
+        <form id="cadastroForm" action="#" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-row aligned-fields">
+                <div class="form-group col-md-4">
+                    <label for="curso">Curso:</label>
+                    <input type="text" class="form-control" id="curso" name="curso">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="sexo">Sexo:</label>
+                    <select class="form-control" id="sexo" name="sexo">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="idade">Idade:</label>
+                    <input type="number" class="form-control" id="idade" name="idade">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo:</label>
+                <input type="text" class="form-control" id="cargo" name="cargo">
+            </div>
+
+            <div class="form-row aligned-fields">
+                <div class="form-group col-md-6">
+                    <label for="imagem">Imagem:</label>
+                    <input type="file" class="file" id="imagem" name="imagem" data-show-preview="false">
+                </div>
+
+                <div class="form-group col-md-6 checkbox-container">
+                    <input type="checkbox" class="form-check-input" id="admin" name="admin">
+                    <label class="form-check-label" for="admin">É Admin</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descrição do Colaborador:</label>
+                <textarea class="form-control" id="descricao" name="descricao" rows="4"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary submit-btn" onclick="validarCadastro()">Confirmar Cadastro</button>
+            <button type="button" class="btn btn-danger clear-btn" onclick="limparCampos()">Limpar Campos</button>
+        </form>
+    </div>
+
+    <!-- Adicione o link para o jQuery e o Popper.js antes do Bootstrap.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Adicione o script para o Bootstrap File Input -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.3.0/js/fileinput.min.js" integrity="sha512-epce3gkfCVk6ZgdlF/vt7R1swziZRPq9u7uhUjd2F28mL/2u2QRuX6sWMBI6UaXz4KbP6EwFv6kSYyW7AHW7gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        function limparCampos() {
+            document.getElementById('cadastroForm').reset();
+        }
+
+        function validarCadastro() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var idade = document.getElementById('idade').value;
+            var cargo = document.getElementById('cargo').value;
+            var descricao = document.getElementById('descricao').value;
+
+            if (nome && email && idade && cargo && descricao) {
+                exibirModal();
+            } else {
+                alert('Preencha todos os campos obrigatórios antes de confirmar o cadastro.');
+            }
+        }
+
+        function exibirModal() {
+            $('#cadastroModal').modal('show');
+            // Fecha a modal automaticamente após 3 segundos
+            setTimeout(function() {
+                $('#cadastroModal').modal('hide');
+            }, 3000);
+        }
+    </script>
+
+<!-- Modal de confirmação -->
+<div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cadastroModalLabel">Colaborador Cadastrado!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                O colaborador foi cadastrado com sucesso.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
